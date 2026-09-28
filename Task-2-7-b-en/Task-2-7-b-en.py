@@ -22,11 +22,10 @@ while (b1 > 0):
 # length of the target code
 # and both codes are not four-digit numbers,
 # the program terminates.
-if (m != 4) and (n != 4) and (m != n):
-    a1 = 0
-    b1 = 0
+if (m != 4) or (n != 4) or (m != n):
     print("The combination lock code must be 4 digits long.")
     print("The current and target codes must be of the same length.")
+    exit()
 a1 = a
 b1 = b
 # Iterate through the digits of the current and target codes
@@ -40,6 +39,7 @@ while (a1 > 0) and (b1 > 0):
     total_moves += min(diff1, diff2)
     a1 //= 10  # Move to the next digit of the current code
     b1 //= 10  # Move to the next digit of the target code
+# Print information to screen
 print(f"Current code: {a}")
 print(f"Target code: {b}")
 print(f"Minimum number of moves: {total_moves}")
